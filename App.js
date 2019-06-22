@@ -7,14 +7,21 @@
  */
 
 import React from 'react';
-import {createAppContainer} from 'react-navigation';
+import {
+  createAppContainer
+} from 'react-navigation';
+import {
+  useScreens
+} from 'react-native-screens';
 
 import RootStack from "./src/router";
 
-const AppContainer = createAppContainer (RootStack);
+useScreens()
+
+const AppContainer = createAppContainer(RootStack);
 
 export default class App extends React.Component {
-  render () {
+  render() {
     return <AppContainer />;
   }
 }

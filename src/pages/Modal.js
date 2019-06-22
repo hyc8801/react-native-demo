@@ -11,7 +11,11 @@ class ModalScreen extends React.Component {
           onPress={() => this.props.navigation.goBack()}
           title="Dismiss"
         />
-        1231231231231231dsaefsaf
+        <Button
+          title="抽屉屏幕"
+          onPress={() =>
+            this.props.navigation.push('Drawer')}
+        />
       </View>
     );
   }

@@ -1,13 +1,23 @@
 
 import React from 'react';
-import {View, Text, Button} from 'react-native';
+import {View, Text, Button, AsyncStorage} from 'react-native';
 
 class DetailsScreen extends React.Component {
+  constructor(props) {
+    super(props);
+    this.signOut = this.signOut.bind(this)
+  }
   static navigationOptions = ({ navigation }) => {
     return {
       title: navigation.getParam('title', 'A Nested Details Screen'),
     };
   };
+  signOut() {
+    // 登出
+    AsyncStorage.removeItem('userToken').then(() => {
+      this.props.navigation.navigate('Auth')
+    })
+  }
   render () {
     // 读取路由传参
     // 该写法当title不存在时容易报错，推荐后者
@@ -32,6 +42,10 @@ class DetailsScreen extends React.Component {
         <Button
           title="Go back"
           onPress={() => this.props.navigation.goBack ()}
+        />
+        <Button
+          title="退出"
+          onPress={this.signOut}
         />
       </View>
     );
