@@ -12,7 +12,7 @@ import LoginScreen from "../pages/Login";
 import PersonalScreen from "../pages/Personal";
 import WebScreen from "../pages/Web";
 // import TableScreen from "../pages/Table";
-// import CameraScreen from "../pages/Camera";
+import CameraScreen from "../pages/Camera";
 import PluginsScreen from "../pages/Plugins";
 
 const defaultOption = {
@@ -113,7 +113,7 @@ const RootStack = createStackNavigator(
     Main: headerStack, // 带header头的组件 其他的全是全面屏
     Drawer: DrawerStack,
     MyModal: ModalScreen,
-    // CameraScreen: CameraScreen,
+    CameraScreen: CameraScreen,
   },
   {
     initialRouteName: 'Main',
