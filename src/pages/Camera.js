@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Text, View, StyleSheet, Button, Modal, TouchableHighlight, Image } from 'react-native'
 import Camera from "../components/Camera";
-// import ImagePicker from 'react-native-image-picker';
+import ImagePicker from 'react-native-image-picker';
 import request from "../utils/request";
 import { uoloadFile } from "../api/commom";
 
@@ -45,38 +45,38 @@ export class CameraScreen extends Component {
     // ImagePicker.launchImageLibrary 直接选择图片
     // ImagePicker.showImagePicker 
 
-    // ImagePicker.launchCamera(options, (response) => {
-    //   console.log('Response = ', response);
+    ImagePicker.launchCamera(options, (response) => {
+      console.log('Response = ', response);
     
-    //   if (response.didCancel) {
-    //     console.log('User cancelled image picker');
-    //   } else if (response.error) {
-    //     console.log('ImagePicker Error: ', response.error);
-    //   } else if (response.customButton) {
-    //     console.log('User tapped custom button: ', response.customButton);
-    //   } else {
-    //     // You can also display the image using data:
-    //     // const source = { uri: 'data:image/jpeg;base64,' + response.data };
-    //     const { imgList } = this.state
-    //     console.log(response)
-    //     imgList.push(response.uri)
-    //     this.setState({
-    //       imgList,
-    //     })
-    //     request.upload('http://192.168.13.32:3000/upload', response)
-    //     .then(res => {
-    //       console.log(res)
-    //     }).catch(err => {
-    //       console.log(err)
-    //     })
-    //     // uoloadFile(response)
-    //     // .then(res => {
-    //     //   console.log(res)
-    //     // }).catch(err => {
-    //     //   console.log(err)
-    //     // })
-    //   }
-    // });
+      if (response.didCancel) {
+        console.log('User cancelled image picker');
+      } else if (response.error) {
+        console.log('ImagePicker Error: ', response.error);
+      } else if (response.customButton) {
+        console.log('User tapped custom button: ', response.customButton);
+      } else {
+        // You can also display the image using data:
+        // const source = { uri: 'data:image/jpeg;base64,' + response.data };
+        const { imgList } = this.state
+        console.log(response)
+        imgList.push(response.uri)
+        this.setState({
+          imgList,
+        })
+        request.upload('http://192.168.13.32:3000/upload', response)
+        .then(res => {
+          console.log(res)
+        }).catch(err => {
+          console.log(err)
+        })
+        // uoloadFile(response)
+        // .then(res => {
+        //   console.log(res)
+        // }).catch(err => {
+        //   console.log(err)
+        // })
+      }
+    });
   }
   render() {
     const { imgList } = this.state
