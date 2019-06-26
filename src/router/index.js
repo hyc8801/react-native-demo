@@ -12,7 +12,23 @@ import LoginScreen from "../pages/Login";
 import PersonalScreen from "../pages/Personal";
 import WebScreen from "../pages/Web";
 // import TableScreen from "../pages/Table";
+// import CameraScreen from "../pages/Camera";
+import PluginsScreen from "../pages/Plugins";
 
+const defaultOption = {
+  // 首页
+  initialRouteName: 'TabNavigator',
+  // 全局默认导航栏样式配置
+  defaultNavigationOptions: {
+    headerStyle: {
+      backgroundColor: '#f4511e',
+    },
+    headerTintColor: '#fff',
+    headerTitleStyle: {
+      fontWeight: 'bold',
+    },
+  },
+}
 
 const drawerWidth = Dimensions.get('window').width;
 
@@ -23,8 +39,10 @@ const HomeIconWithBadge = (props) => {
 
 // tab栏组件
 const TabNavigator = createBottomTabNavigator({
+    // Home: createStackNavigator({HomeScreen}, defaultOption),
+    // Settings: createStackNavigator({SettingsScreen}, defaultOption),
     Home: HomeScreen,
-    Settings: SettingsScreen,
+    Settings: SettingsScreen
   },{
   defaultNavigationOptions: ({ navigation }) => ({
     tabBarIcon: ({ focused, horizontal, tintColor }) => {
@@ -49,6 +67,7 @@ const TabNavigator = createBottomTabNavigator({
   }
 });
 
+// 抽屉组件
 const DrawerStack = createDrawerNavigator(
   {
     // Home: HomeScreen,
@@ -63,13 +82,12 @@ const DrawerStack = createDrawerNavigator(
 )
 
 // 定义路由
-const MainStack = createStackNavigator (
+const headerStack = createStackNavigator (
   {
-    // Home: HomeScreen,
-    Details: DetailsScreen,
     TabNavigator: TabNavigator,
+    Details: DetailsScreen,
     WebScreen: WebScreen,
-    // Table: TableScreen
+    Plugins: PluginsScreen
   },
   {
     // 首页
@@ -85,7 +103,6 @@ const MainStack = createStackNavigator (
       },
     },
   },
-  
 );
 
 
@@ -93,17 +110,13 @@ const MainStack = createStackNavigator (
 // 全面屏与带导航条 路由集合
 const RootStack = createStackNavigator(
   {
-    Main: {
-      screen: MainStack,
-    },
-    MyModal: {
-      screen: ModalScreen,
-    },
-    Drawer: {
-      screen: DrawerStack,
-    },
+    Main: headerStack, // 带header头的组件 其他的全是全面屏
+    Drawer: DrawerStack,
+    MyModal: ModalScreen,
+    // CameraScreen: CameraScreen,
   },
   {
+    initialRouteName: 'Main',
     mode: 'modal',
     headerMode: 'none',
   }
