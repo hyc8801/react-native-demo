@@ -7,6 +7,7 @@ import {
   ActionSheetIOS,
 } from 'react-native'
 
+import Picker from 'react-native-picker';
 import ActionSheet from 'react-native-actionsheet'
 
 let data = [];
@@ -22,24 +23,32 @@ export default class Plugins extends Component {
     alert('长按')
   }
   handlePick = () => {
-    // Picker.init({
-    //   pickerData: data,
-    //   selectedValue: [59],
-    //   onPickerConfirm: data => {
-    //       console.log(data);
-    //   },
-    //   onPickerCancel: data => {
-    //       console.log(data);
-    //   },
-    //   onPickerSelect: data => {
-    //       console.log(data);
-    //   }
-    // });
-    // Picker.show();
+    Picker.init({
+      pickerData: data,
+      pickerConfirmBtnText: '确定',
+      pickerCancelBtnText: '取消',
+      pickerTitleText: '',
+      pickerToolBarBg: [255, 255, 255, 1],
+      pickerBg: [255, 255, 255, 1],
+      selectedValue: [59],
+      onPickerConfirm: data => {
+          console.log(data);
+      },
+      onPickerCancel: data => {
+          console.log(data);
+      },
+      onPickerSelect: data => {
+          console.log(data);
+      }
+    });
+    Picker.show();
+  }
+  handle = () => {
+    console.log(Picker.isPickerShow())
   }
   render() {
     return (
-      <View style={styles.container}>
+      <View style={styles.container} onPress={this.handle}>
         <View style={styles.btn1}>
           <Text onLongPress={this.handleLongRress} style={styles.text}>第三方插件</Text>
         </View>
