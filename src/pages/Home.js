@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Button, Image, StyleSheet, Linking} from 'react-native';
+import {View, Button, Image, StyleSheet, Linking, TextInput} from 'react-native';
 
 class HomeScreen extends React.Component {
   constructor(props) {
@@ -42,10 +42,22 @@ class HomeScreen extends React.Component {
       title: 'home',
     };
   };
-  
+  changeText = (text) => {
+    console.log(text)
+    this.setState({
+      text
+    })
+  }
   render () {
     return (
       <View style={styles.container}>
+        <TextInput
+        secureTextEntry={true}
+        style={{minHeight: 40, borderColor: 'gray', borderWidth: 1}}
+          onChangeText={this.changeText}
+          value={this.state.text}
+          multiline={true}
+        />
         <View style={styles.btn}>
           <Button
             onPress={() => this.props.navigation.push('MyModal')}
@@ -66,6 +78,20 @@ class HomeScreen extends React.Component {
             title="抽屉屏幕"
             onPress={() =>
               this.props.navigation.push('Drawer')}
+          />
+        </View>
+        <View style={styles.btn}>
+          <Button
+            title="日历"
+            onPress={() =>
+              this.props.navigation.push('Calendar')}
+          />
+        </View>
+        <View style={styles.btn}>
+          <Button
+            title="日程"
+            onPress={() =>
+              this.props.navigation.push('Schedule')}
           />
         </View>
         <View style={styles.btn}>
@@ -95,6 +121,20 @@ class HomeScreen extends React.Component {
             title="第三方插件"
             onPress={() =>
               this.props.navigation.push('Plugins')}
+          />
+        </View>
+        <View style={styles.btn}>
+          <Button
+            title="聊天"
+            onPress={() =>
+              this.props.navigation.push('Chat')}
+          />
+        </View>
+        <View style={styles.btn}>
+          <Button
+            title="ANTD 组件库"
+            onPress={() =>
+              this.props.navigation.push('Antd')}
           />
         </View>
         {/* 路由跳转，并传参 */}

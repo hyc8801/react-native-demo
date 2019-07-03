@@ -14,6 +14,10 @@ import WebScreen from "../pages/Web";
 // import TableScreen from "../pages/Table";
 import CameraScreen from "../pages/Camera";
 import PluginsScreen from "../pages/Plugins";
+import ChatScreen from "../pages/Chat";
+import AntdScreen from "../pages/Antd";
+import CalendarScreen from "../pages/Calendar"
+import Schedule from "../pages/Schedule";
 
 const defaultOption = {
   // 首页
@@ -86,8 +90,12 @@ const headerStack = createStackNavigator (
   {
     TabNavigator: TabNavigator,
     Details: DetailsScreen,
+    Calendar: CalendarScreen,
     WebScreen: WebScreen,
-    Plugins: PluginsScreen
+    Plugins: PluginsScreen,
+    Chat: ChatScreen,
+    Antd: AntdScreen,
+    Schedule
   },
   {
     // 首页

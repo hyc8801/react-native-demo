@@ -14,6 +14,8 @@ import {
   useScreens
 } from 'react-native-screens';
 
+import { Button, Provider, Toast } from '@ant-design/react-native';
+
 import RootStack from "./src/router";
 
 useScreens()
@@ -22,6 +24,10 @@ const AppContainer = createAppContainer(RootStack);
 
 export default class App extends React.Component {
   render() {
-    return <AppContainer />;
+    return (
+      <Provider>
+        <AppContainer />
+      </Provider>
+    )
   }
 }
