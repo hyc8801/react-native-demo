@@ -18,6 +18,7 @@ import ChatScreen from "../pages/Chat";
 import AntdScreen from "../pages/Antd";
 import CalendarScreen from "../pages/Calendar"
 import Schedule from "../pages/Schedule";
+import FlatListScreen from "../pages/FlatList";
 
 const defaultOption = {
   // 首页
@@ -95,7 +96,8 @@ const headerStack = createStackNavigator (
     Plugins: PluginsScreen,
     Chat: ChatScreen,
     Antd: AntdScreen,
-    Schedule
+    Schedule,
+    FlatListScreen
   },
   {
     // 首页

@@ -63,10 +63,12 @@ export class CameraScreen extends Component {
         this.setState({
           imgList,
         })
-        request.upload('http://192.168.13.32:3000/upload', response)
+        request.upload('http://192.168.13.32:9900/file/uploadFile', response)
         .then(res => {
+          console.log("成功！");
           console.log(res)
         }).catch(err => {
+          console.log("失败");
           console.log(err)
         })
         // uoloadFile(response)

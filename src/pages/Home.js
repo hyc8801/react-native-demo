@@ -51,13 +51,13 @@ class HomeScreen extends React.Component {
   render () {
     return (
       <View style={styles.container}>
-        <TextInput
+        {/* <TextInput
         secureTextEntry={true}
         style={{minHeight: 40, borderColor: 'gray', borderWidth: 1}}
           onChangeText={this.changeText}
           value={this.state.text}
           multiline={true}
-        />
+        /> */}
         <View style={styles.btn}>
           <Button
             onPress={() => this.props.navigation.push('MyModal')}
@@ -135,6 +135,13 @@ class HomeScreen extends React.Component {
             title="ANTD 组件库"
             onPress={() =>
               this.props.navigation.push('Antd')}
+          />
+        </View>
+        <View style={styles.btn}>
+          <Button
+            title="FlatList 横向"
+            onPress={() =>
+              this.props.navigation.push('FlatListScreen')}
           />
         </View>
         {/* 路由跳转，并传参 */}

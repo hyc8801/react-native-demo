@@ -41,6 +41,7 @@ export default class HorizontalCalendarList extends Component {
           hideExtraDays={false} // 是否隐藏非本月，模式true
           pastScrollRange={24}
           futureScrollRange={24}
+          calendarHeight={this.state.height}
           horizontal // 水平滚动
           pagingEnabled // 启用分页
           // hideDayNames // 是否隐藏星期名

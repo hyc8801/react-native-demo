@@ -14,6 +14,7 @@ import {
   ViewPagerAndroid,
   DatePickerAndroid,
   Vibration,
+  Picker
 } from 'react-native';
 import request from "../utils/request";
 
@@ -21,7 +22,8 @@ class DetailsScreen extends React.Component {
   constructor(props) {
     super(props);
     this.state ={
-      ActionSheet: null
+      ActionSheet: null,
+      language: "",
     }
     this.signOut = this.signOut.bind(this)
     this.handleAlert = this.handleAlert.bind(this)
@@ -188,6 +190,14 @@ class DetailsScreen extends React.Component {
             <Text style={styles.text}>轮播 page2</Text>
           </View>
         </ViewPagerAndroid> */}
+        <Picker
+          mode="dialog"
+          selectedValue={this.state.language}
+          style={{ height: 50, width: 100 }}
+          onValueChange={(itemValue, itemIndex) => this.setState({language: itemValue})}>
+          <Picker.Item label="Java" value="java" />
+          <Picker.Item label="JavaScript" value="js" />
+        </Picker>
       </View>
     );
   }

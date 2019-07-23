@@ -7,7 +7,8 @@ import {
   Checkbox,
   Drawer,
   Picker,
-  Switch
+  Switch,
+  PickerView
 } from '@ant-design/react-native';
 
 const CheckboxItem = Checkbox.CheckboxItem;
@@ -31,6 +32,100 @@ const seasons = [
   },
 ];
 
+const seasons1 = [
+  [
+    {
+      label: '2013',
+      value: '2013',
+    },
+    {
+      label: '2014',
+      value: '2014',
+    },
+    {
+      label: '2013',
+      value: '2015',
+    },
+    {
+      label: '2014',
+      value: '2017',
+    },
+    {
+      label: '2013',
+      value: '2016',
+    },
+    {
+      label: '2014',
+      value: '2018',
+    },
+    {
+      label: '2013',
+      value: '2019',
+    },
+    {
+      label: '2014',
+      value: '2024',
+    },
+    {
+      label: '2013',
+      value: '2033',
+    },
+    {
+      label: '2014',
+      value: '2044',
+    },
+    {
+      label: '2013',
+      value: '2053',
+    },
+    {
+      label: '2014',
+      value: '2064',
+    },{
+      label: '2013',
+      value: '2073',
+    },
+    {
+      label: '2014',
+      value: '2084',
+    },
+    {
+      label: '2013',
+      value: '2093',
+    },
+    {
+      label: '2014',
+      value: '2114',
+    },
+    {
+      label: '2013',
+      value: '22013',
+    },
+    {
+      label: '2014',
+      value: '2314',
+    },
+    {
+      label: '2013',
+      value: '2413',
+    },
+    {
+      label: '2014',
+      value: '2514',
+    },
+  ],
+  [
+    {
+      label: '春',
+      value: '春',
+    },
+    {
+      label: '夏',
+      value: '夏',
+    },
+  ],
+];
+
 export default class Antd extends Component {
   constructor(props) {
     super(props)
@@ -38,6 +133,7 @@ export default class Antd extends Component {
       date: '',
       pickerValue: '',
       checked: "",
+      value: ""
     }
     this.onButtonClick = this.onButtonClick.bind(this)
     this.onChange = this.onChange.bind(this)
@@ -101,12 +197,17 @@ export default class Antd extends Component {
                 省市选择(异步加载)
               </List.Item>
         </Picker>
-        {data.map(i => (
+        {/* {data.map(i => (
           <CheckboxItem key={i.value} onChange={() => this.onChange(i.value)}>
             {i.label}
           </CheckboxItem>
-        ))}
-        
+        ))} */}
+        <PickerView
+          onChange={this.onChange}
+          value={this.state.value}
+          data={seasons1}
+          cascade={false}
+        />
       </View>
     )
   }
