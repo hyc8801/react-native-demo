@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Button, Image, StyleSheet, Linking, TextInput} from 'react-native';
+import {View, Button, Image, StyleSheet, Linking, TextInput, ScrollView} from 'react-native';
 
 class HomeScreen extends React.Component {
   constructor(props) {
@@ -50,7 +50,7 @@ class HomeScreen extends React.Component {
   }
   render () {
     return (
-      <View style={styles.container}>
+      <ScrollView style={styles.container}>
         {/* <TextInput
         secureTextEntry={true}
         style={{minHeight: 40, borderColor: 'gray', borderWidth: 1}}
@@ -144,13 +144,27 @@ class HomeScreen extends React.Component {
               this.props.navigation.push('FlatListScreen')}
           />
         </View>
+        <View style={styles.btn}>
+          <Button
+            title="消息推送"
+            onPress={() =>
+              this.props.navigation.push('Notification')}
+          />
+        </View>
+        <View style={styles.btn}>
+          <Button
+            title="动画"
+            onPress={() =>
+              this.props.navigation.push('Animation')}
+          />
+        </View>
         {/* 路由跳转，并传参 */}
         {/* <TextInput
         style={{height: 40}}
         onChangeText={(text) => this.setState({text})}
         value={this.state.text}
       /> */}
-      </View>
+      </ScrollView>
     );
   }
 }

@@ -3,9 +3,11 @@ package com.rn;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.learnium.RNDeviceInfo.RNDeviceInfo;
+import com.dieam.reactnativepushnotification.ReactNativePushNotificationPackage;
 import com.beefe.picker.PickerViewPackage;
 import com.imagepicker.ImagePickerPackage;
-import org.reactnative.camera.RNCameraPackage;
+
 import io.realm.react.RealmReactPackage;
 import com.reactnativecommunity.webview.RNCWebViewPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
@@ -32,9 +34,10 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new RNDeviceInfo(),
+            new ReactNativePushNotificationPackage(),
             new PickerViewPackage(),
             new ImagePickerPackage(),
-            new RNCameraPackage(),
             new RealmReactPackage(),
             new RNCWebViewPackage(),
             new VectorIconsPackage(),

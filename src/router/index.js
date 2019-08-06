@@ -12,13 +12,15 @@ import LoginScreen from "../pages/Login";
 import PersonalScreen from "../pages/Personal";
 import WebScreen from "../pages/Web";
 // import TableScreen from "../pages/Table";
-import CameraScreen from "../pages/Camera";
+// import CameraScreen from "../pages/Camera";
 import PluginsScreen from "../pages/Plugins";
 import ChatScreen from "../pages/Chat";
 import AntdScreen from "../pages/Antd";
 import CalendarScreen from "../pages/Calendar"
 import Schedule from "../pages/Schedule";
 import FlatListScreen from "../pages/FlatList";
+import Notification from "../pages/Notification";
+import Animation from "../pages/Animation";
 
 const defaultOption = {
   // 首页
@@ -97,7 +99,9 @@ const headerStack = createStackNavigator (
     Chat: ChatScreen,
     Antd: AntdScreen,
     Schedule,
-    FlatListScreen
+    FlatListScreen,
+    Notification,
+    Animation
   },
   {
     // 首页
@@ -123,7 +127,7 @@ const RootStack = createStackNavigator(
     Main: headerStack, // 带header头的组件 其他的全是全面屏
     Drawer: DrawerStack,
     MyModal: ModalScreen,
-    CameraScreen: CameraScreen,
+    // CameraScreen: CameraScreen,
   },
   {
     initialRouteName: 'Main',
