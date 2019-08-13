@@ -22,6 +22,8 @@ import com.oblador.vectoricons.VectorIconsPackage;
 import java.util.Arrays;
 import java.util.List;
 
+import com.hycmodal.EmulatorCheckerPackage;
+
 public class MainApplication extends Application implements ReactApplication {
 
   private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
@@ -42,7 +44,8 @@ public class MainApplication extends Application implements ReactApplication {
             new RNCWebViewPackage(),
             new VectorIconsPackage(),
             new RNScreensPackage(),
-            new RNGestureHandlerPackage()
+            new RNGestureHandlerPackage(),
+            new EmulatorCheckerPackage()
       );
     }
 
