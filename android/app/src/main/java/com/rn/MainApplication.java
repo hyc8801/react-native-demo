@@ -3,6 +3,7 @@ package com.rn;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.github.wuxudong.rncharts.MPAndroidChartPackage;
 import com.learnium.RNDeviceInfo.RNDeviceInfo;
 import com.dieam.reactnativepushnotification.ReactNativePushNotificationPackage;
 import com.beefe.picker.PickerViewPackage;
@@ -36,6 +37,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new MPAndroidChartPackage(),
             new RNDeviceInfo(),
             new ReactNativePushNotificationPackage(),
             new PickerViewPackage(),

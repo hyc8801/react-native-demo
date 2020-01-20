@@ -15,6 +15,7 @@ import WebScreen from "../pages/Web";
 // import CameraScreen from "../pages/Camera";
 import PluginsScreen from "../pages/Plugins";
 import ChatScreen from "../pages/Chat";
+import ChartScreen from "../pages/Chart";
 import AntdScreen from "../pages/Antd";
 import CalendarScreen from "../pages/Calendar"
 import Schedule from "../pages/Schedule";
@@ -97,6 +98,7 @@ const headerStack = createStackNavigator (
     WebScreen: WebScreen,
     Plugins: PluginsScreen,
     Chat: ChatScreen,
+    Chart: ChartScreen,
     Antd: AntdScreen,
     Schedule,
     FlatListScreen,

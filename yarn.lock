@@ -630,10 +630,17 @@
     pirates "^4.0.0"
     source-map-support "^0.5.9"
 
-"@babel/runtime@^7.0.0", "@babel/runtime@^7.4.5":
+"@babel/runtime@^7.0.0":
   version "7.4.5"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.4.5.tgz#582bb531f5f9dc67d2fcb682979894f75e253f12"
   integrity sha512-TuI4qpWZP6lGOGIuGWtp9sPluqYICmbk8T/1vpSysqJxRPkudh/ofFWyqdcMsDf2s7KvDL4/YHgKyvcS3g9CJQ==
+  dependencies:
+    regenerator-runtime "^0.13.2"
+
+"@babel/runtime@^7.8.3":
+  version "7.8.3"
+  resolved "https://registry.npm.taobao.org/@babel/runtime/download/@babel/runtime-7.8.3.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40babel%2Fruntime%2Fdownload%2F%40babel%2Fruntime-7.8.3.tgz#0811944f73a6c926bb2ad35e918dcc1bfab279f1"
+  integrity sha1-CBGUT3OmySa7KtNekY3MG/qyefE=
   dependencies:
     regenerator-runtime "^0.13.2"
 
@@ -5590,6 +5597,14 @@ react-native-camera@^2.11.0:
   integrity sha1-SA3hPwrBkulQxAbYygFXz0u19Bo=
   dependencies:
     prop-types "^15.6.2"
+
+react-native-charts-wrapper@^0.5.7:
+  version "0.5.7"
+  resolved "https://registry.npm.taobao.org/react-native-charts-wrapper/download/react-native-charts-wrapper-0.5.7.tgz#13cdb387ede67f4292b92c8b03a8f15de3a7a2f7"
+  integrity sha1-E82zh+3mf0KSuSyLA6jxXeOnovc=
+  dependencies:
+    prop-types "^15.5.10"
+    react "16.8.3"
 
 react-native-collapsible@^1.4.0:
   version "1.4.0"

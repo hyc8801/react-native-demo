@@ -125,6 +125,13 @@ export default class Plugins extends Component {
             onPickerConfirm={this.onPickerConfirm}
           />
         </View>
+        <View style={styles.btn}>
+          <Button
+            title="表格"
+            onPress={() =>
+              this.props.navigation.push('Chart')}
+          />
+        </View>
       </View>
     )
   }
